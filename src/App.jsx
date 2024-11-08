@@ -9,7 +9,7 @@ import {
 } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 
-import {  Box } from "./components/Box/Box";
+import { Box } from "./components/Box/Box";
 import { Input } from "./components/Input/Input";
 
 import "./App.css";
@@ -38,7 +38,7 @@ export default function App() {
   const handleDragEnd = (event) => {
     const { active, over } = event;
 
-    if (active.id === over.id) return;
+    if (!over || active.id === over.id) return;
 
     setTasks((tasks) => {
       const originalPos = getTaskPos(active.id);
