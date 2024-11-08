@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['@dnd-kit/core'],  // Add this line
+      // Add the modules you want to externalize here
+      external: ['@dnd-kit/core', '@dnd-kit/sortable'],
     },
   },
 });
